@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-paper text-pine-900 font-body antialiased; }
+  h1, h2, h3 { @apply font-display tracking-tight; }
+  :focus-visible { @apply outline outline-2 outline-offset-2 outline-pine-600; }
+}
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-bold transition disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply bg-pine-700 text-white hover:bg-pine-900; }
+  .btn-accent { @apply bg-saffron-500 text-pine-900 hover:bg-saffron-400; }
+  .btn-ghost { @apply border border-pine-100 bg-white text-pine-900 hover:border-pine-600; }
+  .field { @apply w-full rounded-lg border border-pine-100 bg-white px-3 py-2.5 text-sm placeholder:text-pine-900/40; }
+  .field-error { @apply border-red-500; }
+  .container-page { @apply mx-auto w-full max-w-6xl px-4 sm:px-6; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
